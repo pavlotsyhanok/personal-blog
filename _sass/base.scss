@@ -27,6 +27,11 @@ a:hover { color: var(--background-color); background-color: var(--base-color); }
   align-items: center;
   text-align: center;
 }
+.logo {
+  max-width: min-content;
+  display: flex;
+  justify-content: center;
+}
 
 
 @keyframes fade {
@@ -119,6 +124,7 @@ video {
   margin-bottom: 25px;  
   display: flex;  
   justify-content: space-between; 
+  align-items: center;
 }
 .menu ul { margin-top: 12px;  margin-bottom: 12px;  padding-left: 0px;  list-style-type: none;  text-align: right; }
 .menu ul {
@@ -127,6 +133,7 @@ video {
   gap: 20px;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 @media (max-width: 600px) {

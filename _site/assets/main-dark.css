@@ -90,6 +90,12 @@ a:hover {
   text-align: center;
 }
 
+.logo {
+  max-width: min-content;
+  display: flex;
+  justify-content: center;
+}
+
 @keyframes fade {
   0%, 100% {
     opacity: 1;
@@ -235,6 +241,7 @@ video {
   margin-bottom: 25px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .menu ul {
@@ -251,6 +258,7 @@ video {
   gap: 20px;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 @media (max-width: 600px) {
