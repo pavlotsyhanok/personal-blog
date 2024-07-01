@@ -582,5 +582,57 @@ pre {
 .highlight .il {
   color: var(--code-color-14);
 } /* Literal.Number.Integer.Long */
+.cube-container {
+  perspective: 1000px;
+  width: auto;
+  height: 50vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube {
+  position: relative;
+  width: 10vw;
+  height: 10vw;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.face {
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: var(--border);
+}
+
+.face.front {
+  transform: translateZ(5vw);
+}
+
+.face.back {
+  transform: rotateY(180deg) translateZ(5vw);
+}
+
+.face.left {
+  transform: rotateY(-90deg) translateZ(5vw);
+}
+
+.face.right {
+  transform: rotateY(90deg) translateZ(5vw);
+}
+
+.face.top {
+  transform: rotateX(90deg) translateZ(5vw);
+}
+
+.face.bottom {
+  transform: rotateX(-90deg) translateZ(5vw);
+}
 
 /*# sourceMappingURL=main-light.css.map */
