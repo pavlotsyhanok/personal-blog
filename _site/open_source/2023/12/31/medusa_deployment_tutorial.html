@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self'; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self'; object-src 'self'; child-src 'self'; form-action 'none'; base-uri 'self'" />
-<meta http-equiv="X-XSS-Protection"  content="1;mode=block" always>
-<meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin"><head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*; media-src 'self' https://*; object-src 'self' https://*; frame-src 'self' http://www.youtube.com https://www.youtube.com https://*; form-action 'self'; base-uri 'self'" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
+  <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -11,8 +11,6 @@
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Deploy Production Redy MedusaJS Store" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="How to Deploy a Production-Ready Medusa Server and Storefront" />
-<meta property="og:description" content="How to Deploy a Production-Ready Medusa Server and Storefront" />
 <link rel="canonical" href="http://localhost:4000/open_source/2023/12/31/medusa_deployment_tutorial.html" />
 <meta property="og:url" content="http://localhost:4000/open_source/2023/12/31/medusa_deployment_tutorial.html" />
 <meta property="og:type" content="article" />
@@ -20,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Deploy Production Redy MedusaJS Store" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-31T15:00:00-08:00","datePublished":"2023-12-31T15:00:00-08:00","description":"How to Deploy a Production-Ready Medusa Server and Storefront","headline":"Deploy Production Redy MedusaJS Store","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/open_source/2023/12/31/medusa_deployment_tutorial.html"},"url":"http://localhost:4000/open_source/2023/12/31/medusa_deployment_tutorial.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-31T15:00:00-08:00","datePublished":"2023-12-31T15:00:00-08:00","headline":"Deploy Production Redy MedusaJS Store","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/open_source/2023/12/31/medusa_deployment_tutorial.html"},"url":"http://localhost:4000/open_source/2023/12/31/medusa_deployment_tutorial.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" type="text/css" href="/assets/main.css"></head>
 <body>
@@ -51,9 +49,11 @@
   </div>
 </header>
 <main>
-      <h1 id="how-to-deploy-a-production-ready-medusa-server-and-storefront">How to Deploy a Production-Ready Medusa Server and Storefront</h1>
+      <div class="video-container">
+  <iframe src="https://www.youtube.com/embed/XjMWSwoAOQc?si=xhDl_aOP8_iC1fT4" title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="http://music.163.com/outchain/player?type=2&amp;id=29750802&amp;auto=0&amp;height=32"></iframe>
+<h1 id="how-to-deploy-a-production-ready-medusa-server-and-storefront">How to Deploy a Production-Ready Medusa Server and Storefront</h1>
 
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>

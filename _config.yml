@@ -13,3 +13,6 @@ listen_for_clients_preferred_style: true # true or false (default)
 
 plugins:
   - jekyll-seo-tag
+
+csp:
+  frame-src: "'self' http://www.youtube.com"

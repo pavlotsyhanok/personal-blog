@@ -5,15 +5,12 @@ date:   2024-01-01 00:00:00 +0100
 categories: Open_Source
 img: assets/images/medusa-store.webp
 ---
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/XjMWSwoAOQc?si=xhDl_aOP8_iC1fT4" title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 
 # How to Deploy a Production-Ready Medusa Server and Storefront
-
-
-
-{% raw %}
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="http://music.163.com/outchain/player?type=2&id=29750802&auto=0&height=32"></iframe>
-{% endraw %}
 
 
 ## Table of Contents
