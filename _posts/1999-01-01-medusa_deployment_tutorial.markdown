@@ -5,10 +5,11 @@ date:   2024-01-01 00:00:00 +0100
 categories: Open_Source
 img: assets/images/medusa-store.webp
 ---
+{% raw %}
 <div class="video-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/XjMWSwoAOQc?si=xhDl_aOP8_iC1fT4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-
+{% endraw %}
 
 # How to Deploy a Production-Ready Medusa Server and Storefront
 
