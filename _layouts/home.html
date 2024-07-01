@@ -12,12 +12,12 @@ contentwonl == "" %} <br />
   <li>
     {%- assign date_format = "%Y-%m-%d" -%}
     <div class="post-item-homepage">
-      <span class="sub-data-post">[ {{ post.categories | join: ", " }} ]</span>
+      <div class="post-meta">
+        <span class="sub-data-post">[ {{ post.categories | join: ", " }} ]</span>
+        <span class="sub-data-post">[ {{ post.date | date: date_format }} ]</span>
+      </div>
       <a class="homepage-post" href="{{ post.url | relative_url }}"
-        >{{ post.title | escape }}<span class="sub-data-post">
-          [ {{ post.date | date: date_format }} ]</span
-        ></a
-      >
+        >{{ post.title | escape }}</a>
     </div>
 
     {%- if post.vid -%}

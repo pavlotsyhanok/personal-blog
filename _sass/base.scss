@@ -255,7 +255,7 @@ pre { border: none;  padding: 0;  margin: 0;  overflow:auto;  font-size: $base-f
 .cube-container {
   perspective: 1000px;
   width: auto;
-  height: 50vh;
+  height: 30vh;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -286,3 +286,18 @@ pre { border: none;  padding: 0;  margin: 0;  overflow:auto;  font-size: $base-f
 .face.right  { transform: rotateY(90deg) translateZ(5vw); }
 .face.top    { transform: rotateX(90deg) translateZ(5vw); }
 .face.bottom { transform: rotateX(-90deg) translateZ(5vw); }
+
+
+// Mobile Posts
+
+.post-meta {
+	display: flex;
+	flex-wrap: wrap;
+  }
+  
+  
+  @media (min-width: 768px) {
+	.post-meta {
+	  flex-wrap: nowrap;
+	}
+  }

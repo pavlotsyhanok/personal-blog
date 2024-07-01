@@ -3,7 +3,7 @@ title: pavlo_works_secret
 layout: secret
 permalink: /secret
 ---
-why did you click here?
+secret
 {% raw %}
 <div>
     <div class="cube-container">

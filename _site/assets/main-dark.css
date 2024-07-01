@@ -585,7 +585,7 @@ pre {
 .cube-container {
   perspective: 1000px;
   width: auto;
-  height: 50vh;
+  height: 30vh;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -633,6 +633,17 @@ pre {
 
 .face.bottom {
   transform: rotateX(-90deg) translateZ(5vw);
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .post-meta {
+    flex-wrap: nowrap;
+  }
 }
 
 /*# sourceMappingURL=main-dark.css.map */
