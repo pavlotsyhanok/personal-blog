@@ -15,6 +15,6 @@ Modern Open Source ERP - [ArcERP®](https://arcerp.co)
 <span></span>
 <script src="{{ '/assets/earth-spinner.js' | relative_url }}"></script>
 
-<h1>INDEX:</h1>
+<h1>CONTENT INDEX:</h1>
 
 <span class="sub-data-post">*to search just cmd ⌘+f*</span>
