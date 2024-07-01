@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self'; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; media-src 'self'; object-src 'self'; child-src 'self'; form-action 'none'; base-uri 'self'" />
+<meta http-equiv="X-XSS-Protection"  content="1;mode=block" always>
+<meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="icon" type="image/png" href="/assets/fav-icon.png">
+  <title>Deploy Production Redy MedusaJS Store</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Deploy Production Redy MedusaJS Store" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to Deploy a Production-Ready Medusa Server and Storefront" />
+<meta property="og:description" content="How to Deploy a Production-Ready Medusa Server and Storefront" />
+<link rel="canonical" href="http://localhost:4000/open_source/2023/12/31/medusa_deployment_tutorial.html" />
+<meta property="og:url" content="http://localhost:4000/open_source/2023/12/31/medusa_deployment_tutorial.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-12-31T15:00:00-08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Deploy Production Redy MedusaJS Store" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-31T15:00:00-08:00","datePublished":"2023-12-31T15:00:00-08:00","description":"How to Deploy a Production-Ready Medusa Server and Storefront","headline":"Deploy Production Redy MedusaJS Store","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/open_source/2023/12/31/medusa_deployment_tutorial.html"},"url":"http://localhost:4000/open_source/2023/12/31/medusa_deployment_tutorial.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" type="text/css" href="/assets/main.css"></head>
+<body>
+    <div class="container"><header>
+  <div class="menu">
+
+    <ul class="logo">
+      <svg
+        width="100%"
+        height="18px"
+        style=""
+        viewBox="0 0 1762 2021"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M1652.16 1057.71L1198.45 1511.42C1156.9 1552.97 1100.54 1576.32 1041.78 1576.32H567.33C521.1 1576.32 483.62 1613.8 483.62 1660.03V2000.91C483.62 2011.96 474.67 2020.91 463.62 2020.91H20C8.95 2020.91 0 2011.96 0 2000.91V1580.02C0 1556.42 19.13 1537.29 42.73 1537.29H448.81C474.3 1537.29 498.76 1527.16 516.78 1509.13L1507.32 518.6C1520.23 505.69 1511.09 483.61 1492.83 483.61H20C8.95 483.61 0 474.66 0 463.61V20C0 8.95 8.95 0 20 0H1099.77C1115.24 0 1130.08 6.15 1141.02 17.08L1652.16 528.23C1798.37 674.44 1798.37 911.49 1652.16 1057.71Z"
+          fill="currentColor"></path>
+      </svg>
+    </ul>
+
+    <ul class="menu-ul"><li>
+        <a href="/">/publications</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/channel/UCXjMWSwoAOQc?si=cKep4r2W2LaYf6I5">/youtube</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/channel/UCXjMWSwoAOQc?si=cKep4r2W2LaYf6I5">/github</a>
+      </li>
+      <li ><a class="get-on-call" href="/">/get on call</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+      <h1 id="how-to-deploy-a-production-ready-medusa-server-and-storefront">How to Deploy a Production-Ready Medusa Server and Storefront</h1>
+
+<p><a href="https://www.youtube.com/watch?v=XjMWSwoAOQc"><img src="https://img.youtube.com/vi/XjMWSwoAOQc/0.jpg" alt="YouTube video player" /></a></p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#architecture-and-requirements">Architecture and Requirements</a></li>
+  <li><a href="#setting-up-the-backend">Setting Up the Backend</a>
+    <blockquote>
+      <p><a href="#configuring-the-backend">Configuring the Backend</a>
+<a href="#digital-ocean-setup">Digital Ocean Setup</a></p>
+    </blockquote>
+  </li>
+  <li><a href="#setting-up-the-frontend">Setting Up the Frontend</a></li>
+  <li><a href="#adding-essential-plugins">Adding Essential Plugins</a>
+    <blockquote>
+      <p><a href="#meilisearch-integration">MeiliSearch Integration</a>
+<a href="#stripe-integration">Stripe Integration</a>
+<a href="#sendgrid-integration">SendGrid Integration</a></p>
+    </blockquote>
+  </li>
+  <li><a href="#final-touches">Final Touches</a>
+    <blockquote>
+      <p><a href="#configuring-cors-settings">Configuring CORS Settings</a>
+<a href="#spaces-plugin-for-media-storage">Spaces Plugin for Media Storage</a></p>
+    </blockquote>
+  </li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ol>
+
+<p><br /></p>
+
+<p>🔗 Frontend Repository: https://github.com/pavlotsyhanok/medusa-tutorial-frontend</p>
+
+<p>🔗 Backend Repository: https://github.com/pavlotsyhanok/medusa-tutorial-backend</p>
+
+<h2 id="introduction">Introduction</h2>
+<p>Deploying a Medusa server and Medusa storefront can seem daunting, but with the right guidance, you can have your e-commerce platform up and running efficiently. In this blog post, we’ll walk through the entire process, from setting up your backend and frontend to configuring essential plugins like MeiliSearch, Stripe, and SendGrid. By the end of this tutorial, you’ll have a production-ready Medusa store that can scale seamlessly.</p>
+
+<h2 id="architecture-and-requirements">Architecture and Requirements</h2>
+<p>Before diving into the deployment steps, let’s quickly overview the architecture and requirements for our setup:</p>
+<ul>
+  <li><strong>Backend</strong>: Hosted on Digital Ocean with automatic scaling using the app platform. PostgreSQL is used for the database, Redis for event bus and caching, and S3 spaces for media files.</li>
+  <li><strong>Frontend</strong>: Deployed on Vercel, leveraging serverless functions for scalability. Stripe is used for payment processing, SendGrid for transactional emails, and MeiliSearch for the search engine.</li>
+</ul>
+
+<h2 id="setting-up-the-backend">Setting Up the Backend</h2>
+<p>First, ensure you have the necessary dependencies installed:</p>
+<ul>
+  <li><strong>Node.js</strong>: JavaScript runtime engine.</li>
+  <li><strong>Git</strong>: For codebase management.</li>
+  <li><strong>PostgreSQL</strong>: Database, though we’ll connect directly to Digital Ocean PostgreSQL.</li>
+</ul>
+
+<p>Create parent directories for both the server and storefront. Initialize Git repositories for both backend and frontend, and commit the initial code.</p>
+
+<h3 id="configuring-the-backend">Configuring the Backend</h3>
+<p>Update the <code class="language-plaintext highlighter-rouge">package.json</code> and <code class="language-plaintext highlighter-rouge">medusa-config.js</code> files for compatibility with Digital Ocean. Initialize the Git repository and commit the code changes.</p>
+
+<h3 id="digital-ocean-setup">Digital Ocean Setup</h3>
+<p>Log in to Digital Ocean and create PostgreSQL and Redis databases. Set up app hosting on Digital Ocean, linking your GitHub repository and configuring environmental variables. Ensure the app scales automatically and verify its health.</p>
+
+<h2 id="setting-up-the-frontend">Setting Up the Frontend</h2>
+<p>Deploy the storefront to Vercel. Configure the necessary environmental variables, ensuring they align with your backend setup. Test the storefront by adding a sample product and configuring a region.</p>
+
+<h2 id="adding-essential-plugins">Adding Essential Plugins</h2>
+<h3 id="meilisearch-integration">MeiliSearch Integration</h3>
+<p>Install MeiliSearch for enhanced product search functionality. Configure the plugin and update the storefront configuration and environmental variables. Test the search functionality to ensure it works correctly.</p>
+
+<h3 id="stripe-integration">Stripe Integration</h3>
+<p>Install and configure the Stripe plugin for payment processing. Update the necessary keys and settings, then test the Stripe payment and capture functionality.</p>
+
+<h3 id="sendgrid-integration">SendGrid Integration</h3>
+<p>Install SendGrid for transactional emails. Create and configure a dynamic email template, then test the email functionality by placing an order.</p>
+
+<h2 id="final-touches">Final Touches</h2>
+<h3 id="configuring-cors-settings">Configuring CORS Settings</h3>
+<p>Set up CORS settings for the backend to restrict access to the storefront URL, enhancing security.</p>
+
+<h3 id="spaces-plugin-for-media-storage">Spaces Plugin for Media Storage</h3>
+<p>Create a Digital Ocean Spaces bucket for media file storage. Install and configure the spaces plugin, then update the storefront to accept images from the bucket. Test the image upload and retrieval functionality to ensure seamless media management.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations! You’ve successfully deployed a Medusa server and storefront, configured with essential plugins to ensure your e-commerce store is production-ready and scalable. This comprehensive guide should serve as a solid foundation for setting up your Medusa platform. If you have any questions, feel free to reach out via Discord or the official Medusa server.</p>
+
+<p>By following these steps, you’ll ensure that your Medusa store is not only functional but also capable of handling growth and providing a seamless shopping experience for your customers.</p>
+
+<p><em>Thank you for reading! For more tutorials and support, join the Medusa community on Discord and the official Medusa server.</em></p>
+
+
+    </main><footer class="footer-flex">
+  <div class="flex-horizontal">
+    <script src="/assets/loader.js"></script>
+    <span class="server-status" id="frequency-wave"></span><span>&nbsp|&nbsp;</span>
+    
+    <div id="clock"></div>
+  </div>
+  <script src="/assets/clock.js"></script>
+  <span>reach out via <a href="https://www.linkedin.com/in/pavlotsyhanok/">LinkedIn</a></span>
+</footer>
+</div>
+  </body>
+</html>
