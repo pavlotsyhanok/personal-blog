@@ -24,7 +24,7 @@ Table of Contents:
 # Syntax highlighting
 This theme supports syntax respectively code highlighting. Below you find some examples of different programming languages.
 
-![Test Image]({{ site.baseurl }}/assets/testimg.jpg)
+![Test Image]({{ site.baseurl }}/assets/images/diagram.png)
 
 
 <br /><a name="ruby"></a>ruby:

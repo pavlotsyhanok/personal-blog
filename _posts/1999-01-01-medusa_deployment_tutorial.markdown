@@ -39,6 +39,19 @@ img: assets/images/medusa-store.webp
 ## Introduction
 Deploying a Medusa server and Medusa storefront can seem daunting, but with the right guidance, you can have your e-commerce platform up and running efficiently. In this blog post, we'll walk through the entire process, from setting up your backend and frontend to configuring essential plugins like MeiliSearch, Stripe, and SendGrid. By the end of this tutorial, you'll have a production-ready Medusa store that can scale seamlessly.
 
+{% highlight javascript %}
+function deployMedusaStore() {
+  console.log("Let's deploy a Medusa store!");
+  // Configure backend
+  configureBackend();
+  // Set up frontend
+  setupFrontend();
+  // Add essential plugins
+  addPlugins();
+  console.log("Medusa store deployed successfully!");
+}
+{% endhighlight %}
+
 ## Architecture and Requirements
 Before diving into the deployment steps, let's quickly overview the architecture and requirements for our setup:
 - **Backend**: Hosted on Digital Ocean with automatic scaling using the app platform. PostgreSQL is used for the database, Redis for event bus and caching, and S3 spaces for media files.
@@ -52,6 +65,19 @@ First, ensure you have the necessary dependencies installed:
 
 Create parent directories for both the server and storefront. Initialize Git repositories for both backend and frontend, and commit the initial code.
 
+{% highlight javascript %}
+function configureBackend() {
+  console.log("Configuring the backend...");
+  // Update package.json and medusa-config.js
+  updateConfigFiles();
+  // Initialize Git repository
+  initializeGitRepo();
+  // Commit code changes
+  commitCodeChanges();
+  console.log("Backend configured successfully!");
+}
+{% endhighlight %}
+
 ### Configuring the Backend
 Update the `package.json` and `medusa-config.js` files for compatibility with Digital Ocean. Initialize the Git repository and commit the code changes. 
 
@@ -60,6 +86,19 @@ Log in to Digital Ocean and create PostgreSQL and Redis databases. Set up app ho
 
 ## Setting Up the Frontend
 Deploy the storefront to Vercel. Configure the necessary environmental variables, ensuring they align with your backend setup. Test the storefront by adding a sample product and configuring a region.
+
+{% highlight javascript %}
+function setupFrontend() {
+  console.log("Setting up the frontend...");
+  // Deploy to Vercel
+  deployToVercel();
+  // Configure environmental variables
+  configureEnvVariables();
+  // Test the storefront
+  testStorefront();
+  console.log("Frontend set up successfully!");
+}
+{% endhighlight %}
 
 ## Adding Essential Plugins
 ### MeiliSearch Integration
@@ -71,12 +110,34 @@ Install and configure the Stripe plugin for payment processing. Update the neces
 ### SendGrid Integration
 Install SendGrid for transactional emails. Create and configure a dynamic email template, then test the email functionality by placing an order.
 
+{% highlight javascript %}
+function addPlugins() {
+  console.log("Adding essential plugins...");
+  // Install and configure MeiliSearch
+  installMeiliSearch();
+  // Install and configure Stripe
+  installStripe();
+  // Install and configure SendGrid
+  installSendGrid();
+  console.log("Plugins added successfully!");
+}
+{% endhighlight %}
+
+## Deployment Architecture Overview
+
+The diagram above illustrates the high-level architecture of a Medusa deployment. The backend server is hosted on Digital Ocean, with PostgreSQL and Redis databases. The frontend storefront is deployed to Vercel. Essential plugins like MeiliSearch, Stripe, and SendGrid are integrated to enhance functionality and user experience.
+
+
 ## Final Touches
 ### Configuring CORS Settings
 Set up CORS settings for the backend to restrict access to the storefront URL, enhancing security.
 
 ### Spaces Plugin for Media Storage
 Create a Digital Ocean Spaces bucket for media file storage. Install and configure the spaces plugin, then update the storefront to accept images from the bucket. Test the image upload and retrieval functionality to ensure seamless media management.
+
+
+<img src="{{ site.baseurl }}/assets/images/diagram.png" alt="Medusa Deployment Architecture">
+
 
 ## Conclusion
 Congratulations! You've successfully deployed a Medusa server and storefront, configured with essential plugins to ensure your e-commerce store is production-ready and scalable. This comprehensive guide should serve as a solid foundation for setting up your Medusa platform. If you have any questions, feel free to reach out via Discord or the official Medusa server.
