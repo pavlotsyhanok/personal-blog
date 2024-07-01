@@ -15,4 +15,4 @@ plugins:
   - jekyll-seo-tag
 
 csp:
-  frame-src: "'self' http://www.youtube.com"
+  frame-src: "'self' http://www.youtube.com https://www.youtube.com https://*"
