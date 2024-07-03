@@ -161,12 +161,13 @@ video {
   position: absolute;
   z-index: 1000;
   pointer-events: none;
-  width: auto;
-  height: auto;
+  min-width: 350px;
+  min-height: 250px;
   max-width: 350px;
   max-height: 250px;
   object-fit: contain;
   opacity: var(--hover-img-opacity);
+  overflow: visible;
 }
 
 .hover-image video {
