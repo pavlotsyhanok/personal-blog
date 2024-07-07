@@ -6,170 +6,198 @@ categories: No_Code
 vid: assets/images/plasmic-output-vid-comp.mp4
 ---
 
-Table of Contents:
+{% raw %}
+<div class="video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/XlRTJ9UEZQY?si=M4XcymTBo4rI-80n" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+{% endraw %}
 
-1. [Ruby](#ruby)
-2. [Python](#python)
-3. [PHP](#php)
-4. [JavaScript](#javascript)
-5. [Java](#java)
-6. [Objective-C](#objective-c)
-<br><br><b>Hacking</b><br><br>
-7. [Perl](#perl)
-8. [SQL](#sql)
-9. [C++](#c)
-10. [C#](#c-1)
-11. [Visual Basic](#visual-basic)
+# Plasmic Storefront for Medusa JS
+This repository hosts a NextJS storefront designed for seamless integration with Medusa, an open-source headless e-commerce engine. It leverages Plasmic, an open-source visual builder studio for React, allowing for easy visual edits and customization of the storefront.
 
-# Syntax highlighting
-This theme supports syntax respectively code highlighting. Below you find some examples of different programming languages.
+**Plasmic Studio Project:** https://studio.plasmic.app/projects/kZYdLdyCWduEwLJ51vftX9 (runs only with `http://localhost:3000`, read instructions!)
 
-![Test Image]({{ site.baseurl }}/assets/testimg.jpg)
+## ⚠️ Project Status
+
+🚧 **Warning:** This storefront is in its very early stages of development. Expect inconsistencies in the code and potential bugs. Currently, this project utilizes NextJS 13 App Router. Support for NextJS 14 App Router in Plasmic is in early beta. We plan to upgrade to the NextJS 14 App Router once it's generally available.
 
 
-<br /><a name="ruby"></a>ruby:
-{% highlight ruby %}
-def foo
-  puts 'foo'
-end
+![Plasmic](https://github.com/pavlotsyhanok/medusa-plasmic-storefront/raw/main/medusa-plasmic-img.jpg)
 
-def bubble_sort(list)
-  return list if list.size <= 1 # already sorted
-  swapped = true
-  while swapped do
-    swapped = false
-    0.upto(list.size-2) do |i|
-      if list[i] > list[i+1]
-        list[i], list[i+1] = list[i+1], list[i] # swap values
-        swapped = true
-      end
-    end
-  end
+**Click on the image above to watch tutorial 👆**
 
-  list
-end
+## Highlights
+
+- **Customizable Storefront:** Utilize Plasmic's visual design capabilities to tailor your storefront to your brand's needs without deep coding.
+
+- **Flexible E-commerce Engine:** Medusa's headless architecture allows for versatile backend management, making it adaptable to various e-commerce scenarios.
+
+- **Open Source:** Fully open-source stack, perfect for community collaboration and enhancements.
+
+## Prerequisites
+
+Before setting up the Plasmic Storefront, ensure the following requirements are met:
+
+1. **Medusa Backend**: You must have a deployed Medusa backend instance. Ensure that CORS is configured to allow requests from `http://localhost:3000` to accommodate local development.
+2. **⚠️ Medusa Configuration**:
+   It's crucial to activate specific feature flags in your `medusa-config.js`. Enable product categories by adding the following configuration:
+   
+   {% highlight javascript %}
+
+   module.exports = {
+     projectConfig,
+     plugins,
+     modules,
+     featureFlags: {
+       product_categories: true
+     }
+   }
+   {% endhighlight %}
+
+### Plasmic CLI
+
+The Plasmic CLI is essential for interacting with the Plasmic service. To install the CLI globally using npm, run the following command:
+
+{% highlight bash %}
+npm install -g @plasmicapp/cli
 {% endhighlight %}
 
+Ensure all conditions are met before proceeding with the installation and setup.
 
-<br /><br /><a name="python"></a>python:
-{% highlight python %}
-def func():
-     # function body
-     print("hello world!")
+## Getting Started
 
-     def setup(app):
-         # enable Pygments json lexer
-         try:
-             import pygments
-             if pygments.__version__ >= '1.5':
-                 # use JSON lexer included in recent versions of Pygments
-                 from pygments.lexers import JsonLexer
-             else:
-                 # use JSON lexer from pygments-json if installed
-                 from pygson.json_lexer import JSONLexer as JsonLexer
-         except ImportError:
-             pass  # not fatal if we have old (or no) Pygments and no pygments-json
-         else:
-             app.add_lexer('json', JsonLexer())
+Follow these steps to get your development environment set up:
 
-         return {"parallel_read_safe": True}
+**Clone the Repository**:
+Begin by cloning the repository to your local machine. Open a terminal and run the following command:
 
-words = ['cat', 'window', 'defenestrate']
-for w in words:
-   print w, len(w)
+{% highlight bash %}
+   git clone https://github.com/pavlotsyhanok/medusa-plasmic-storefront.git
 {% endhighlight %}
 
+**Navigate to the Project Directory**:
+Change to the project directory with:
 
-<br /><br /><a name="php"></a>php:
-{% highlight php %}
-<?php function add($x, $y) {
-    $total = $x + $y;
-    return $total;
-}
-echo "1 + 16 = " . add(1, 16);
-?>
+{% highlight bash %}
+   cd medusa-plasmic-storefront
 {% endhighlight %}
 
+**Install Dependencies**:
+Install all the necessary dependencies using npm:
 
-<br /><br /><a name="javascript"></a>js:
-{% highlight javascript %}
-function sayHello(name) {
-  if (!name) {
-    console.log('Hello World');
-  } else {
-    console.log(`Hello ${name}`);
-  }  
-}  
-
-function myFunc(a, b) {
-    return a * b;
-}
-document.getElementById('demo').innerHTML = myFunc(4, 3);
+{% highlight bash %}
+   npm install
 {% endhighlight %}
 
+**Run the Development Server**:
+Start the development server. This will host your project locally on `http://localhost:3000`, which is necessary before proceeding to the Plasmic Studio.
 
-<br /><br /><a name="java"></a>java:
-{% highlight java %}
-class HelloWorldApp {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
-}
+{% highlight bash %}
+   npm run dev
+{% endhighlight %}
+**Open the Project in Plasmic Studio**:
+Once your local server is running, you can begin working with the storefront in Plasmic Studio. Open Plasmic Studio and duplicate the project from the following link: [MedusaJS - Plasmic Demo Store](https://studio.plasmic.app/projects/kZYdLdyCWduEwLJ51vftX9). After duplicating the store, you can open your copy and start customizing the storefront.
+
+These steps will set up the Plasmic Storefront on your local machine and prepare you for visual editing and further development in Plasmic Studio.
+
+### Prerequisites
+
+What things you need to install the software and how to install them:
+
+{% highlight bash %}
+npm install medusa-cli -g
+npm install @plasmicapp/cli -g
 {% endhighlight %}
 
+To authorize your Plasmic account with the CLI, run the following command in your terminal:
 
-<br /><a name="objective-c"></a>objective c:
-{% highlight objective_c %}
-- (int)method:(int)i {
-    return [self square_root:i];
-}
+{% highlight bash %}
+plasmic auth
 {% endhighlight %}
 
+This is a Next.js project bootstrapped with [`create-plasmic-app`](https://www.npmjs.com/package/create-plasmic-app).
 
-<br /><br /><a name="perl"></a>perl:
-{% highlight perl %}
-while (<>) {
-    chomp;
-    if (s/$//) {
-        $_ .= <>;
-        redo unless eof();
-    }
-}
+## Getting Started
+
+Follow these steps to get your development environment set up:
+
+1. **Clone the Repository**:
+   Begin by cloning the repository to your local machine. Open a terminal and run the following command:
+
+   {% highlight bash %}
+   git clone https://github.com/pavlotsyhanok/medusa-plasmic-storefront.git
+   {% endhighlight %}
+2. **Navigate to the Project Directory**:
+   Change to the project directory with:
+
+   {% highlight bash %}
+   cd medusa-plasmic-storefront
+   {% endhighlight %}
+3. **Install Dependencies**:
+   Install all the necessary dependencies using npm:
+
+   {% highlight bash %}
+   npm install
+   {% endhighlight %}
+4. **Run the Development Server**:
+   Start the development server. This will host your project locally on `http://localhost:3000`, which is necessary before proceeding to the Plasmic Studio.
+
+   {% highlight bash %}
+   npm run dev
+   {% endhighlight %}
+5. **Open the Project in Plasmic Studio**:
+   Once your local server is running, you can begin working with the storefront in Plasmic Studio. Open Plasmic Studio and duplicate the project from the following link: [MedusaJS - Plasmic Demo Store](https://studio.plasmic.app/projects/kZYdLdyCWduEwLJ51vftX9). After duplicating the store, you can open your copy and start customizing the storefront.
+
+These steps will set up the Plasmic Storefront on your local machine and prepare you for visual editing and further development in Plasmic Studio.
+
+## Project Configuration
+
+Once your local development environment is set up with NextJS running on `http://localhost:3000` and you have opened your project in Plasmic Studio, you're ready to start configuring and customizing your storefront.
+
+### Authentication and Initial Setup
+
+Follow the authentication instructions provided within Plasmic Studio to securely connect your local environment.
+
+### Viewing and Editing Code
+
+To view and modify the code:
+
+1. Click on the "code" button located at the top right of your screen in Plasmic Studio. This will show you how to configure your project and integrate your changes.
+
+### Syncing Changes
+
+After making design changes in Plasmic Studio that you wish to apply to your local project, you'll need to sync these changes. Run the following command in your terminal where your local server is running:
+
+{% highlight bash %}
+plasmic sync --projects 'YOUR PROJECT ID' --yes
 {% endhighlight %}
 
+**Finding Your Project ID:** Your Project ID can be found in the URL of your Plasmic Studio, or by clicking on the **"code"** button where it is usually displayed.
 
-<br /><br /><a name="sql"></a>sql:
-{% highlight sql %}
-SELECT Country FROM Customers WHERE Country <> 'USA'
-{% endhighlight %}
+This command will download all the updated code to your local repository. Once the sync is complete, you can commit these changes to your GitHub repository and host your updated storefront independently from Plasmic.
 
+## Troubleshooting
 
-<br /><br /><a name="c"></a>c++:
-{% highlight c++ %}
-#include
-using namespace std;
-int main () {
-  cout << "Hello World!";
-  return 0;
-}
-{% endhighlight %}
+During your work with Plasmic Studio and the NextJS storefront, you might encounter a few common issues. Here are some tips to help resolve them:
 
+### Project Not Loading in Plasmic Studio
 
-<br /><br /><a name="c-1"></a>c sharp:
-{% highlight c# %}
-class Foo {
-    public int Value;
-    public static explicit operator Foo(int value) {
-        return new Foo(value);
-    }
-}
-Foo foo = (Foo)2;
-{% endhighlight %}
+If your project is not loading properly in Plasmic Studio, follow these steps:
 
+1. **Verify NextJS Server**: Ensure that your NextJS application is running on `http://localhost:3000`. The local server must be active as Plasmic Studio will attempt to communicate with it.
 
-<br /><br /><a name="visual-basic"></a>vb:
-{% highlight vb linenos %}
-Private Sub Form_Load()
-    MsgBox "Hello, World!"
-End Sub
-{% endhighlight %}
+2. **Check Plasmic Host App URL**: Make sure that your Plasmic host app URL is correctly set to `http://localhost:3000/plasmic-host`. Incorrect settings here can prevent Plasmic Studio from loading your project.
+
+**Enter Host App URL**: You may encounter a pop-up asking you to enter your host app URL. Ensure you provide the correct URL `http://localhost:3000/plasmic-host` to facilitate the connection between Plasmic Studio and your local server.
+
+## Get Familiar with Plasmic
+
+With Plasmic, you can enable non-developers on your team to publish pages and content into your website or app.
+
+To learn more about Plasmic, take a look at the following resources:
+
+- [Plasmic Website](https://www.plasmic.app/)
+- [Plasmic Documentation](https://docs.plasmic.app/learn/)
+- [Plasmic Slack Community](https://www.plasmic.app/slack)
+
+You can check out [the Plasmic GitHub repository](https://github.com/plasmicapp/plasmic) - your feedback and contributions are welcome.

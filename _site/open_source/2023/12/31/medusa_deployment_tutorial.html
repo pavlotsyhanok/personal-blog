@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*; media-src 'self' https://*; object-src 'self' https://*; frame-src 'self' http://www.youtube.com https://www.youtube.com https://*; form-action 'self'; base-uri 'self'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://* https://github.com/*; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*; media-src 'self' https://* https://github.com/*; object-src 'self' https://*; frame-src 'self' http://www.youtube.com https://www.youtube.com https://*; form-action 'self'; base-uri 'self'" />
   <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
   <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade"><head>
   <meta charset="utf-8">
@@ -45,7 +45,7 @@
       <li>
         <a href="https://github.com/pavlotsyhanok">/github</a>
       </li>
-      <li ><a class="get-on-call" href="/">/get on call</a></li>
+      <li ><a class="get-on-call" href="https://cal.com/pavlotsyhanok/15min">/get on call</a></li>
     </ul>
   </div>
 </header>
@@ -57,141 +57,23 @@
 
 <h1 id="how-to-deploy-a-production-ready-medusa-server-and-storefront">How to Deploy a Production-Ready Medusa Server and Storefront</h1>
 
-<h2 id="table-of-contents">Table of Contents</h2>
-<ol>
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#architecture-and-requirements">Architecture and Requirements</a></li>
-  <li><a href="#setting-up-the-backend">Setting Up the Backend</a>
-    <blockquote>
-      <p><a href="#configuring-the-backend">Configuring the Backend</a>
-<a href="#digital-ocean-setup">Digital Ocean Setup</a></p>
-    </blockquote>
-  </li>
-  <li><a href="#setting-up-the-frontend">Setting Up the Frontend</a></li>
-  <li><a href="#adding-essential-plugins">Adding Essential Plugins</a>
-    <blockquote>
-      <p><a href="#meilisearch-integration">MeiliSearch Integration</a>
-<a href="#stripe-integration">Stripe Integration</a>
-<a href="#sendgrid-integration">SendGrid Integration</a></p>
-    </blockquote>
-  </li>
-  <li><a href="#final-touches">Final Touches</a>
-    <blockquote>
-      <p><a href="#configuring-cors-settings">Configuring CORS Settings</a>
-<a href="#spaces-plugin-for-media-storage">Spaces Plugin for Media Storage</a></p>
-    </blockquote>
-  </li>
-  <li><a href="#conclusion">Conclusion</a></li>
-</ol>
-
 <p><br /></p>
 
 <p>🔗 Frontend Repository: https://github.com/pavlotsyhanok/medusa-tutorial-frontend</p>
 
 <p>🔗 Backend Repository: https://github.com/pavlotsyhanok/medusa-tutorial-backend</p>
 
-<h2 id="introduction">Introduction</h2>
-<p>Deploying a Medusa server and Medusa storefront can seem daunting, but with the right guidance, you can have your e-commerce platform up and running efficiently. In this blog post, we’ll walk through the entire process, from setting up your backend and frontend to configuring essential plugins like MeiliSearch, Stripe, and SendGrid. By the end of this tutorial, you’ll have a production-ready Medusa store that can scale seamlessly.</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nf">deployMedusaStore</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Let's deploy a Medusa store!</span><span class="dl">"</span><span class="p">);</span>
-  <span class="c1">// Configure backend</span>
-  <span class="nf">configureBackend</span><span class="p">();</span>
-  <span class="c1">// Set up frontend</span>
-  <span class="nf">setupFrontend</span><span class="p">();</span>
-  <span class="c1">// Add essential plugins</span>
-  <span class="nf">addPlugins</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Medusa store deployed successfully!</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
-
 <h2 id="architecture-and-requirements">Architecture and Requirements</h2>
-<p>Before diving into the deployment steps, let’s quickly overview the architecture and requirements for our setup:</p>
+<p>Overview the architecture and requirements for our setup:</p>
+
 <ul>
-  <li><strong>Backend</strong>: Hosted on Digital Ocean with automatic scaling using the app platform. PostgreSQL is used for the database, Redis for event bus and caching, and S3 spaces for media files.</li>
-  <li><strong>Frontend</strong>: Deployed on Vercel, leveraging serverless functions for scalability. Stripe is used for payment processing, SendGrid for transactional emails, and MeiliSearch for the search engine.</li>
+  <li>
+    <p><strong>Backend</strong>: Hosted on Digital Ocean with automatic scaling using the app platform. PostgreSQL is used for the database, Redis for event bus and caching, and S3 spaces for media files.</p>
+  </li>
+  <li>
+    <p><strong>Frontend</strong>: Deployed on Vercel, leveraging serverless functions for scalability. Stripe is used for payment processing, SendGrid for transactional emails, and MeiliSearch for the search engine.</p>
+  </li>
 </ul>
-
-<h2 id="setting-up-the-backend">Setting Up the Backend</h2>
-<p>First, ensure you have the necessary dependencies installed:</p>
-<ul>
-  <li><strong>Node.js</strong>: JavaScript runtime engine.</li>
-  <li><strong>Git</strong>: For codebase management.</li>
-  <li><strong>PostgreSQL</strong>: Database, though we’ll connect directly to Digital Ocean PostgreSQL.</li>
-</ul>
-
-<p>Create parent directories for both the server and storefront. Initialize Git repositories for both backend and frontend, and commit the initial code.</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nf">configureBackend</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Configuring the backend...</span><span class="dl">"</span><span class="p">);</span>
-  <span class="c1">// Update package.json and medusa-config.js</span>
-  <span class="nf">updateConfigFiles</span><span class="p">();</span>
-  <span class="c1">// Initialize Git repository</span>
-  <span class="nf">initializeGitRepo</span><span class="p">();</span>
-  <span class="c1">// Commit code changes</span>
-  <span class="nf">commitCodeChanges</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Backend configured successfully!</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
-
-<h3 id="configuring-the-backend">Configuring the Backend</h3>
-<p>Update the <code class="language-plaintext highlighter-rouge">package.json</code> and <code class="language-plaintext highlighter-rouge">medusa-config.js</code> files for compatibility with Digital Ocean. Initialize the Git repository and commit the code changes.</p>
-
-<h3 id="digital-ocean-setup">Digital Ocean Setup</h3>
-<p>Log in to Digital Ocean and create PostgreSQL and Redis databases. Set up app hosting on Digital Ocean, linking your GitHub repository and configuring environmental variables. Ensure the app scales automatically and verify its health.</p>
-
-<h2 id="setting-up-the-frontend">Setting Up the Frontend</h2>
-<p>Deploy the storefront to Vercel. Configure the necessary environmental variables, ensuring they align with your backend setup. Test the storefront by adding a sample product and configuring a region.</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nf">setupFrontend</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Setting up the frontend...</span><span class="dl">"</span><span class="p">);</span>
-  <span class="c1">// Deploy to Vercel</span>
-  <span class="nf">deployToVercel</span><span class="p">();</span>
-  <span class="c1">// Configure environmental variables</span>
-  <span class="nf">configureEnvVariables</span><span class="p">();</span>
-  <span class="c1">// Test the storefront</span>
-  <span class="nf">testStorefront</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Frontend set up successfully!</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
-
-<h2 id="adding-essential-plugins">Adding Essential Plugins</h2>
-<h3 id="meilisearch-integration">MeiliSearch Integration</h3>
-<p>Install MeiliSearch for enhanced product search functionality. Configure the plugin and update the storefront configuration and environmental variables. Test the search functionality to ensure it works correctly.</p>
-
-<h3 id="stripe-integration">Stripe Integration</h3>
-<p>Install and configure the Stripe plugin for payment processing. Update the necessary keys and settings, then test the Stripe payment and capture functionality.</p>
-
-<h3 id="sendgrid-integration">SendGrid Integration</h3>
-<p>Install SendGrid for transactional emails. Create and configure a dynamic email template, then test the email functionality by placing an order.</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nf">addPlugins</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Adding essential plugins...</span><span class="dl">"</span><span class="p">);</span>
-  <span class="c1">// Install and configure MeiliSearch</span>
-  <span class="nf">installMeiliSearch</span><span class="p">();</span>
-  <span class="c1">// Install and configure Stripe</span>
-  <span class="nf">installStripe</span><span class="p">();</span>
-  <span class="c1">// Install and configure SendGrid</span>
-  <span class="nf">installSendGrid</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Plugins added successfully!</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
-
-<h2 id="deployment-architecture-overview">Deployment Architecture Overview</h2>
-
-<p>The diagram above illustrates the high-level architecture of a Medusa deployment. The backend server is hosted on Digital Ocean, with PostgreSQL and Redis databases. The frontend storefront is deployed to Vercel. Essential plugins like MeiliSearch, Stripe, and SendGrid are integrated to enhance functionality and user experience.</p>
-
-<h2 id="final-touches">Final Touches</h2>
-<h3 id="configuring-cors-settings">Configuring CORS Settings</h3>
-<p>Set up CORS settings for the backend to restrict access to the storefront URL, enhancing security.</p>
-
-<h3 id="spaces-plugin-for-media-storage">Spaces Plugin for Media Storage</h3>
-<p>Create a Digital Ocean Spaces bucket for media file storage. Install and configure the spaces plugin, then update the storefront to accept images from the bucket. Test the image upload and retrieval functionality to ensure seamless media management.</p>
-
-<p><img src="/assets/images/diagram.png" alt="Medusa Deployment Architecture" /></p>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>Congratulations! You’ve successfully deployed a Medusa server and storefront, configured with essential plugins to ensure your e-commerce store is production-ready and scalable. This comprehensive guide should serve as a solid foundation for setting up your Medusa platform. If you have any questions, feel free to reach out via Discord or the official Medusa server.</p>
-
-<p>By following these steps, you’ll ensure that your Medusa store is not only functional but also capable of handling growth and providing a seamless shopping experience for your customers.</p>
-
-<p><em>Thank you for reading! For more tutorials and support, join the Medusa community on Discord and the official Medusa server.</em></p>
 
 
     </main><footer class="footer-flex">
@@ -199,7 +81,7 @@
     <script src="/assets/loader.js"></script>
     <span class="server-status" id="frequency-wave"></span><span>&nbsp|&nbsp;</span>
     
-    <div id="clock"></div>
+    <div id="clock">101011</div>
   </div>
   <script src="/assets/clock.js"></script>
   <span><a href="https://www.linkedin.com/in/pavlotsyhanok/">LinkedIn</a></span>

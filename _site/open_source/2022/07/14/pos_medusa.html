@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*; media-src 'self' https://*; object-src 'self' https://*; frame-src 'self' http://www.youtube.com https://www.youtube.com https://*; form-action 'self'; base-uri 'self'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://* https://github.com/*; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*; media-src 'self' https://* https://github.com/*; object-src 'self' https://*; frame-src 'self' http://www.youtube.com https://www.youtube.com https://*; form-action 'self'; base-uri 'self'" />
   <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
   <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade"><head>
   <meta charset="utf-8">
@@ -11,8 +11,6 @@
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="POS Application for MedusaJS(React)" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Table of Contents:" />
-<meta property="og:description" content="Table of Contents:" />
 <link rel="canonical" href="http://localhost:4000/open_source/2022/07/14/pos_medusa.html" />
 <meta property="og:url" content="http://localhost:4000/open_source/2022/07/14/pos_medusa.html" />
 <meta property="og:type" content="article" />
@@ -20,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="POS Application for MedusaJS(React)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-14T16:00:00-07:00","datePublished":"2022-07-14T16:00:00-07:00","description":"Table of Contents:","headline":"POS Application for MedusaJS(React)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/open_source/2022/07/14/pos_medusa.html"},"url":"http://localhost:4000/open_source/2022/07/14/pos_medusa.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-14T16:00:00-07:00","datePublished":"2022-07-14T16:00:00-07:00","headline":"POS Application for MedusaJS(React)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/open_source/2022/07/14/pos_medusa.html"},"url":"http://localhost:4000/open_source/2022/07/14/pos_medusa.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" type="text/css" href="/assets/main.css"></head>
 <body>
@@ -47,162 +45,109 @@
       <li>
         <a href="https://github.com/pavlotsyhanok">/github</a>
       </li>
-      <li ><a class="get-on-call" href="/">/get on call</a></li>
+      <li ><a class="get-on-call" href="https://cal.com/pavlotsyhanok/15min">/get on call</a></li>
     </ul>
   </div>
 </header>
 <main>
-      <p>Table of Contents:</p>
+      
+<div class="video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/M1N6nEop_YE?si=prw6Kr5c6jRYfZkd" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+
+<h1 id="medusajs-point-of-sale-pos-application">MedusaJS Point of Sale (POS) Application</h1>
+
+<p>This Point of Sale (POS) application, built using React, is designed to support B2B flows and integrates seamlessly with the Medusa backend through API interfaces. It supports Stripe POS devices for efficient payment processing, catering to both mobile and desktop platforms as a Progressive Web App (PWA).</p>
+
+<h2 id="️-branching-information">⚠️ Branching Information</h2>
+
+<p>Please note that the latest production build is being built in the <code class="language-plaintext highlighter-rouge">pos/develop</code> branch.</p>
+
+<p>If you wish to run the legacy version of the non-production application, please check out the <code class="language-plaintext highlighter-rouge">pos/legacy</code> branch.</p>
+
+<p>Each branch contains instructions in its respective <code class="language-plaintext highlighter-rouge">readme.md</code> file.</p>
+
+<h3 id="branches">Branches</h3>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">pos/develop</code></strong> - Current POS application development.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">medusa/api</code></strong> - Necessary routes for your Medusa server.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">medusa/legacy</code></strong> - Legacy version of the application designed for testing routes and Stripe terminal integration.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">pos/architecture</code></strong> - Visual architecture reference and design of the application.</li>
+</ul>
+
+<h2 id="how-to-start">How to Start</h2>
 
 <ol>
-  <li><a href="#ruby">Ruby</a></li>
-  <li><a href="#python">Python</a></li>
-  <li><a href="#php">PHP</a></li>
-  <li><a href="#javascript">JavaScript</a></li>
-  <li><a href="#java">Java</a></li>
-  <li><a href="#objective-c">Objective-C</a>
-<br /><br /><b>Hacking</b><br /><br /></li>
-  <li><a href="#perl">Perl</a></li>
-  <li><a href="#sql">SQL</a></li>
-  <li><a href="#c">C++</a></li>
-  <li><a href="#c-1">C#</a></li>
-  <li><a href="#visual-basic">Visual Basic</a></li>
+  <li>Clone the repository:</li>
 </ol>
 
-<h1 id="syntax-highlighting">Syntax highlighting</h1>
-<p>This theme supports syntax respectively code highlighting. Below you find some examples of different programming languages.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone https://github.com/pavlotsyhanok/medusa-pos-react.git</code></pre></figure>
 
-<p><img src="/assets/images/diagram.png" alt="Test Image" /></p>
+<ol>
+  <li>Install dependencies:</li>
+</ol>
 
-<p><br /><a name="ruby"></a>ruby:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm <span class="nb">install</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">foo</span>
-  <span class="nb">puts</span> <span class="s1">'foo'</span>
-<span class="k">end</span>
+<ol>
+  <li>Run the development server:</li>
+</ol>
 
-<span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">list</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">list</span> <span class="k">if</span> <span class="n">list</span><span class="p">.</span><span class="nf">size</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="c1"># already sorted</span>
-  <span class="n">swapped</span> <span class="o">=</span> <span class="kp">true</span>
-  <span class="k">while</span> <span class="n">swapped</span> <span class="k">do</span>
-    <span class="n">swapped</span> <span class="o">=</span> <span class="kp">false</span>
-    <span class="mi">0</span><span class="p">.</span><span class="nf">upto</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="nf">size</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-      <span class="k">if</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># swap values</span>
-        <span class="n">swapped</span> <span class="o">=</span> <span class="kp">true</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm run dev</code></pre></figure>
 
-  <span class="n">list</span>
-<span class="k">end</span></code></pre></figure>
+<h2 id="key-features">Key Features</h2>
 
-<p><br /><br /><a name="python"></a>python:</p>
+<ul>
+  <li><strong>Customer Onboarding:</strong> Facilitate in-store new customer registration and securely store payment methods via Stripe.</li>
+  <li><strong>B2B Optimized Flows:</strong> Full support for unique customer group properties and tailored price lists.</li>
+  <li><strong>Pre-orders and Backorders:</strong> Authenticate funds and securely store payment methods for future charges.</li>
+  <li><strong>Order Management:</strong> Supports draft orders and provides shipping quotes based on the Medusa backend configuration.</li>
+  <li><strong>Sales Rep Analytics:</strong> Track sales performance and establish goals through configurable events.</li>
+</ul>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
-     <span class="c1"># function body
-</span>     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">hello world!</span><span class="sh">"</span><span class="p">)</span>
+<h2 id="tech-stack">Tech Stack</h2>
 
-     <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
-         <span class="c1"># enable Pygments json lexer
-</span>         <span class="k">try</span><span class="p">:</span>
-             <span class="kn">import</span> <span class="n">pygments</span>
-             <span class="k">if</span> <span class="n">pygments</span><span class="p">.</span><span class="n">__version__</span> <span class="o">&gt;=</span> <span class="sh">'</span><span class="s">1.5</span><span class="sh">'</span><span class="p">:</span>
-                 <span class="c1"># use JSON lexer included in recent versions of Pygments
-</span>                 <span class="kn">from</span> <span class="n">pygments.lexers</span> <span class="kn">import</span> <span class="n">JsonLexer</span>
-             <span class="k">else</span><span class="p">:</span>
-                 <span class="c1"># use JSON lexer from pygments-json if installed
-</span>                 <span class="kn">from</span> <span class="n">pygson.json_lexer</span> <span class="kn">import</span> <span class="n">JSONLexer</span> <span class="k">as</span> <span class="n">JsonLexer</span>
-         <span class="k">except</span> <span class="nb">ImportError</span><span class="p">:</span>
-             <span class="k">pass</span>  <span class="c1"># not fatal if we have old (or no) Pygments and no pygments-json
-</span>         <span class="k">else</span><span class="p">:</span>
-             <span class="n">app</span><span class="p">.</span><span class="nf">add_lexer</span><span class="p">(</span><span class="sh">'</span><span class="s">json</span><span class="sh">'</span><span class="p">,</span> <span class="nc">JsonLexer</span><span class="p">())</span>
+<ul>
+  <li><strong>Platforms:</strong> Mobile, Tablet, Desktop (PWA)</li>
+  <li><strong>Frameworks:</strong> React for UI, CapacitorJS for device API interactions</li>
+  <li><strong>Future Development:</strong> Plans to incorporate React Native</li>
+</ul>
 
-         <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">parallel_read_safe</span><span class="sh">"</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+<p><img src="https://github.com/pavlotsyhanok/medusa-pos-react/raw/pos/develop/public/coming-soon/pos-layout.png" alt="POS Flows" /></p>
 
-<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">cat</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">window</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">defenestrate</span><span class="sh">'</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-   <span class="k">print</span> <span class="n">w</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span></code></pre></figure>
+<h2 id="project-status">Project Status</h2>
 
-<p><br /><br /><a name="php"></a>php:</p>
+<p><strong>Current Phase:</strong> In Development</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">function</span> <span class="n">add</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span> <span class="nv">$y</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$total</span> <span class="o">=</span> <span class="nv">$x</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
-    <span class="k">return</span> <span class="nv">$total</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">echo</span> <span class="s2">"1 + 16 = "</span> <span class="mf">.</span> <span class="nf">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<p><img src="https://github.com/pavlotsyhanok/medusa-pos-react/raw/pos/develop/public/coming-soon/preview.png" alt="POS Flows" /></p>
 
-<p><br /><br /><a name="javascript"></a>js:</p>
+<h3 id="completed-workflows">Completed Workflows</h3>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nf">sayHello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Hello </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-  <span class="p">}</span>  
-<span class="p">}</span>  
+<ul>
+  <li><strong>Security:</strong> Authentication and route protection, including admin login.</li>
+  <li><strong>Checkout Processes:</strong> Integration with Medusa checkout flows and Stripe POS terminal.</li>
+  <li><strong>Customer Handling:</strong> Supports both guest and B2B checkout flows with applied price lists.</li>
+  <li><strong>Promotions:</strong> Implementation of manual discounts and coupon applications.</li>
+  <li><strong>Operational Tools:</strong> Features like order tracking, barcode scanning, and product search.</li>
+</ul>
 
-<span class="kd">function</span> <span class="nf">myFunc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">demo</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nf">myFunc</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span></code></pre></figure>
+<p><img src="https://github.com/pavlotsyhanok/medusa-pos-react/raw/pos/develop/public/coming-soon/pos-flows.png" alt="POS Flows" /></p>
 
-<p><br /><br /><a name="java"></a>java:</p>
+<h2 id="to-do">To-Do</h2>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">HelloWorldApp</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello World!"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<ul>
+  <li><strong>Performance Metrics:</strong> Implement scoring systems for sales representatives.</li>
+  <li><strong>Payment Expansion:</strong> Integration with Square POS functionalities.</li>
+</ul>
 
-<p><br /><a name="objective-c"></a>objective c:</p>
+<h2 id="coming-soon">Coming Soon</h2>
 
-<figure class="highlight"><pre><code class="language-objective_c" data-lang="objective_c"><span class="k">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="nf">method</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">i</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">self</span> <span class="nf">square_root</span><span class="p">:</span><span class="n">i</span><span class="p">];</span>
-<span class="p">}</span></code></pre></figure>
+<p>This repository will soon be updated with the full project under the “Coming Soon” folder. Stay tuned for the release!</p>
 
-<p><br /><br /><a name="perl"></a>perl:</p>
+<h2 id="stay-tuned">Stay Tuned</h2>
 
-<figure class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="k">while</span> <span class="p">(</span><span class="o">&lt;&gt;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">chomp</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="sr">s/$//</span><span class="p">)</span> <span class="p">{</span>
-        <span class="vg">$_</span> <span class="o">.=</span> <span class="o">&lt;&gt;</span><span class="p">;</span>
-        <span class="k">redo</span> <span class="k">unless</span> <span class="nb">eof</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<p><br /><br /><a name="sql"></a>sql:</p>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">Country</span> <span class="k">FROM</span> <span class="n">Customers</span> <span class="k">WHERE</span> <span class="n">Country</span> <span class="o">&lt;&gt;</span> <span class="s1">'USA'</span></code></pre></figure>
-
-<p><br /><br /><a name="c"></a>c++:</p>
-
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello World!"</span><span class="p">;</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-<p><br /><br /><a name="c-1"></a>c sharp:</p>
-
-<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
-    <span class="k">public</span> <span class="kt">int</span> <span class="n">Value</span><span class="p">;</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">explicit</span> <span class="k">operator</span> <span class="nf">Foo</span><span class="p">(</span><span class="kt">int</span> <span class="k">value</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">Foo</span><span class="p">(</span><span class="k">value</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">Foo</span> <span class="n">foo</span> <span class="p">=</span> <span class="p">(</span><span class="n">Foo</span><span class="p">)</span><span class="m">2</span><span class="p">;</span></code></pre></figure>
-
-<p><br /><br /><a name="visual-basic"></a>vb:</p>
-
-<figure class="highlight"><pre><code class="language-vb" data-lang="vb"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="code"><pre><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">Form_Load</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="s">"Hello, World!"</span>
-<span class="k">End</span> <span class="k">Sub</span>
-</pre></td></tr></tbody></table></code></pre></figure>
+<p>Stay tuned for further updates as we progress towards general availability, aiming to enhance the retail experience with innovative technology solutions.</p>
 
 
     </main><footer class="footer-flex">
@@ -210,7 +155,7 @@
     <script src="/assets/loader.js"></script>
     <span class="server-status" id="frequency-wave"></span><span>&nbsp|&nbsp;</span>
     
-    <div id="clock"></div>
+    <div id="clock">101011</div>
   </div>
   <script src="/assets/clock.js"></script>
   <span><a href="https://www.linkedin.com/in/pavlotsyhanok/">LinkedIn</a></span>

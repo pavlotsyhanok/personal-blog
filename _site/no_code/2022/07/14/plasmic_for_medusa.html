@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*; media-src 'self' https://*; object-src 'self' https://*; frame-src 'self' http://www.youtube.com https://www.youtube.com https://*; form-action 'self'; base-uri 'self'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://* https://github.com/*; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*; media-src 'self' https://* https://github.com/*; object-src 'self' https://*; frame-src 'self' http://www.youtube.com https://www.youtube.com https://*; form-action 'self'; base-uri 'self'" />
   <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
   <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade"><head>
   <meta charset="utf-8">
@@ -11,8 +11,6 @@
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Medusa Plasmic Storefront Template" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Table of Contents:" />
-<meta property="og:description" content="Table of Contents:" />
 <link rel="canonical" href="http://localhost:4000/no_code/2022/07/14/plasmic_for_medusa.html" />
 <meta property="og:url" content="http://localhost:4000/no_code/2022/07/14/plasmic_for_medusa.html" />
 <meta property="og:type" content="article" />
@@ -20,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Medusa Plasmic Storefront Template" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-14T16:00:00-07:00","datePublished":"2022-07-14T16:00:00-07:00","description":"Table of Contents:","headline":"Medusa Plasmic Storefront Template","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/no_code/2022/07/14/plasmic_for_medusa.html"},"url":"http://localhost:4000/no_code/2022/07/14/plasmic_for_medusa.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-14T16:00:00-07:00","datePublished":"2022-07-14T16:00:00-07:00","headline":"Medusa Plasmic Storefront Template","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/no_code/2022/07/14/plasmic_for_medusa.html"},"url":"http://localhost:4000/no_code/2022/07/14/plasmic_for_medusa.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" type="text/css" href="/assets/main.css"></head>
 <body>
@@ -47,162 +45,214 @@
       <li>
         <a href="https://github.com/pavlotsyhanok">/github</a>
       </li>
-      <li ><a class="get-on-call" href="/">/get on call</a></li>
+      <li ><a class="get-on-call" href="https://cal.com/pavlotsyhanok/15min">/get on call</a></li>
     </ul>
   </div>
 </header>
 <main>
-      <p>Table of Contents:</p>
+      
+<div class="video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/XlRTJ9UEZQY?si=M4XcymTBo4rI-80n" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+
+<h1 id="plasmic-storefront-for-medusa-js">Plasmic Storefront for Medusa JS</h1>
+<p>This repository hosts a NextJS storefront designed for seamless integration with Medusa, an open-source headless e-commerce engine. It leverages Plasmic, an open-source visual builder studio for React, allowing for easy visual edits and customization of the storefront.</p>
+
+<p><strong>Plasmic Studio Project:</strong> https://studio.plasmic.app/projects/kZYdLdyCWduEwLJ51vftX9 (runs only with <code class="language-plaintext highlighter-rouge">http://localhost:3000</code>, read instructions!)</p>
+
+<h2 id="️-project-status">⚠️ Project Status</h2>
+
+<p>🚧 <strong>Warning:</strong> This storefront is in its very early stages of development. Expect inconsistencies in the code and potential bugs. Currently, this project utilizes NextJS 13 App Router. Support for NextJS 14 App Router in Plasmic is in early beta. We plan to upgrade to the NextJS 14 App Router once it’s generally available.</p>
+
+<p><img src="https://github.com/pavlotsyhanok/medusa-plasmic-storefront/raw/main/medusa-plasmic-img.jpg" alt="Plasmic" /></p>
+
+<p><strong>Click on the image above to watch tutorial 👆</strong></p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>
+    <p><strong>Customizable Storefront:</strong> Utilize Plasmic’s visual design capabilities to tailor your storefront to your brand’s needs without deep coding.</p>
+  </li>
+  <li>
+    <p><strong>Flexible E-commerce Engine:</strong> Medusa’s headless architecture allows for versatile backend management, making it adaptable to various e-commerce scenarios.</p>
+  </li>
+  <li>
+    <p><strong>Open Source:</strong> Fully open-source stack, perfect for community collaboration and enhancements.</p>
+  </li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before setting up the Plasmic Storefront, ensure the following requirements are met:</p>
 
 <ol>
-  <li><a href="#ruby">Ruby</a></li>
-  <li><a href="#python">Python</a></li>
-  <li><a href="#php">PHP</a></li>
-  <li><a href="#javascript">JavaScript</a></li>
-  <li><a href="#java">Java</a></li>
-  <li><a href="#objective-c">Objective-C</a>
-<br /><br /><b>Hacking</b><br /><br /></li>
-  <li><a href="#perl">Perl</a></li>
-  <li><a href="#sql">SQL</a></li>
-  <li><a href="#c">C++</a></li>
-  <li><a href="#c-1">C#</a></li>
-  <li><a href="#visual-basic">Visual Basic</a></li>
+  <li><strong>Medusa Backend</strong>: You must have a deployed Medusa backend instance. Ensure that CORS is configured to allow requests from <code class="language-plaintext highlighter-rouge">http://localhost:3000</code> to accommodate local development.</li>
+  <li><strong>⚠️ Medusa Configuration</strong>:
+It’s crucial to activate specific feature flags in your <code class="language-plaintext highlighter-rouge">medusa-config.js</code>. Enable product categories by adding the following configuration:</li>
 </ol>
 
-<h1 id="syntax-highlighting">Syntax highlighting</h1>
-<p>This theme supports syntax respectively code highlighting. Below you find some examples of different programming languages.</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">   <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="nx">projectConfig</span><span class="p">,</span>
+     <span class="nx">plugins</span><span class="p">,</span>
+     <span class="nx">modules</span><span class="p">,</span>
+     <span class="na">featureFlags</span><span class="p">:</span> <span class="p">{</span>
+       <span class="na">product_categories</span><span class="p">:</span> <span class="kc">true</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+   </code></pre></figure>
 
-<p><img src="/assets/testimg.jpg" alt="Test Image" /></p>
+<h3 id="plasmic-cli">Plasmic CLI</h3>
 
-<p><br /><a name="ruby"></a>ruby:</p>
+<p>The Plasmic CLI is essential for interacting with the Plasmic service. To install the CLI globally using npm, run the following command:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">foo</span>
-  <span class="nb">puts</span> <span class="s1">'foo'</span>
-<span class="k">end</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm <span class="nb">install</span> <span class="nt">-g</span> @plasmicapp/cli</code></pre></figure>
 
-<span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">list</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">list</span> <span class="k">if</span> <span class="n">list</span><span class="p">.</span><span class="nf">size</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="c1"># already sorted</span>
-  <span class="n">swapped</span> <span class="o">=</span> <span class="kp">true</span>
-  <span class="k">while</span> <span class="n">swapped</span> <span class="k">do</span>
-    <span class="n">swapped</span> <span class="o">=</span> <span class="kp">false</span>
-    <span class="mi">0</span><span class="p">.</span><span class="nf">upto</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="nf">size</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-      <span class="k">if</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># swap values</span>
-        <span class="n">swapped</span> <span class="o">=</span> <span class="kp">true</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
+<p>Ensure all conditions are met before proceeding with the installation and setup.</p>
 
-  <span class="n">list</span>
-<span class="k">end</span></code></pre></figure>
+<h2 id="getting-started">Getting Started</h2>
 
-<p><br /><br /><a name="python"></a>python:</p>
+<p>Follow these steps to get your development environment set up:</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
-     <span class="c1"># function body
-</span>     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">hello world!</span><span class="sh">"</span><span class="p">)</span>
+<p><strong>Clone the Repository</strong>:
+Begin by cloning the repository to your local machine. Open a terminal and run the following command:</p>
 
-     <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
-         <span class="c1"># enable Pygments json lexer
-</span>         <span class="k">try</span><span class="p">:</span>
-             <span class="kn">import</span> <span class="n">pygments</span>
-             <span class="k">if</span> <span class="n">pygments</span><span class="p">.</span><span class="n">__version__</span> <span class="o">&gt;=</span> <span class="sh">'</span><span class="s">1.5</span><span class="sh">'</span><span class="p">:</span>
-                 <span class="c1"># use JSON lexer included in recent versions of Pygments
-</span>                 <span class="kn">from</span> <span class="n">pygments.lexers</span> <span class="kn">import</span> <span class="n">JsonLexer</span>
-             <span class="k">else</span><span class="p">:</span>
-                 <span class="c1"># use JSON lexer from pygments-json if installed
-</span>                 <span class="kn">from</span> <span class="n">pygson.json_lexer</span> <span class="kn">import</span> <span class="n">JSONLexer</span> <span class="k">as</span> <span class="n">JsonLexer</span>
-         <span class="k">except</span> <span class="nb">ImportError</span><span class="p">:</span>
-             <span class="k">pass</span>  <span class="c1"># not fatal if we have old (or no) Pygments and no pygments-json
-</span>         <span class="k">else</span><span class="p">:</span>
-             <span class="n">app</span><span class="p">.</span><span class="nf">add_lexer</span><span class="p">(</span><span class="sh">'</span><span class="s">json</span><span class="sh">'</span><span class="p">,</span> <span class="nc">JsonLexer</span><span class="p">())</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   git clone https://github.com/pavlotsyhanok/medusa-plasmic-storefront.git</code></pre></figure>
 
-         <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">parallel_read_safe</span><span class="sh">"</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+<p><strong>Navigate to the Project Directory</strong>:
+Change to the project directory with:</p>
 
-<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">cat</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">window</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">defenestrate</span><span class="sh">'</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-   <span class="k">print</span> <span class="n">w</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   <span class="nb">cd </span>medusa-plasmic-storefront</code></pre></figure>
 
-<p><br /><br /><a name="php"></a>php:</p>
+<p><strong>Install Dependencies</strong>:
+Install all the necessary dependencies using npm:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">function</span> <span class="n">add</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span> <span class="nv">$y</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$total</span> <span class="o">=</span> <span class="nv">$x</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
-    <span class="k">return</span> <span class="nv">$total</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">echo</span> <span class="s2">"1 + 16 = "</span> <span class="mf">.</span> <span class="nf">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   npm <span class="nb">install</span></code></pre></figure>
 
-<p><br /><br /><a name="javascript"></a>js:</p>
+<p><strong>Run the Development Server</strong>:
+Start the development server. This will host your project locally on <code class="language-plaintext highlighter-rouge">http://localhost:3000</code>, which is necessary before proceeding to the Plasmic Studio.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nf">sayHello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Hello </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-  <span class="p">}</span>  
-<span class="p">}</span>  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   npm run dev</code></pre></figure>
 
-<span class="kd">function</span> <span class="nf">myFunc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">demo</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nf">myFunc</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span></code></pre></figure>
+<p><strong>Open the Project in Plasmic Studio</strong>:
+Once your local server is running, you can begin working with the storefront in Plasmic Studio. Open Plasmic Studio and duplicate the project from the following link: <a href="https://studio.plasmic.app/projects/kZYdLdyCWduEwLJ51vftX9">MedusaJS - Plasmic Demo Store</a>. After duplicating the store, you can open your copy and start customizing the storefront.</p>
 
-<p><br /><br /><a name="java"></a>java:</p>
+<p>These steps will set up the Plasmic Storefront on your local machine and prepare you for visual editing and further development in Plasmic Studio.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">HelloWorldApp</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello World!"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<h3 id="prerequisites-1">Prerequisites</h3>
 
-<p><br /><a name="objective-c"></a>objective c:</p>
+<p>What things you need to install the software and how to install them:</p>
 
-<figure class="highlight"><pre><code class="language-objective_c" data-lang="objective_c"><span class="k">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="nf">method</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">i</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">self</span> <span class="nf">square_root</span><span class="p">:</span><span class="n">i</span><span class="p">];</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm <span class="nb">install </span>medusa-cli <span class="nt">-g</span>
+npm <span class="nb">install</span> @plasmicapp/cli <span class="nt">-g</span></code></pre></figure>
 
-<p><br /><br /><a name="perl"></a>perl:</p>
+<p>To authorize your Plasmic account with the CLI, run the following command in your terminal:</p>
 
-<figure class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="k">while</span> <span class="p">(</span><span class="o">&lt;&gt;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">chomp</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="sr">s/$//</span><span class="p">)</span> <span class="p">{</span>
-        <span class="vg">$_</span> <span class="o">.=</span> <span class="o">&lt;&gt;</span><span class="p">;</span>
-        <span class="k">redo</span> <span class="k">unless</span> <span class="nb">eof</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">plasmic auth</code></pre></figure>
 
-<p><br /><br /><a name="sql"></a>sql:</p>
+<p>This is a Next.js project bootstrapped with <a href="https://www.npmjs.com/package/create-plasmic-app"><code class="language-plaintext highlighter-rouge">create-plasmic-app</code></a>.</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">Country</span> <span class="k">FROM</span> <span class="n">Customers</span> <span class="k">WHERE</span> <span class="n">Country</span> <span class="o">&lt;&gt;</span> <span class="s1">'USA'</span></code></pre></figure>
+<h2 id="getting-started-1">Getting Started</h2>
 
-<p><br /><br /><a name="c"></a>c++:</p>
+<p>Follow these steps to get your development environment set up:</p>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello World!"</span><span class="p">;</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<ol>
+  <li><strong>Clone the Repository</strong>:
+Begin by cloning the repository to your local machine. Open a terminal and run the following command:</li>
+</ol>
 
-<p><br /><br /><a name="c-1"></a>c sharp:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   git clone https://github.com/pavlotsyhanok/medusa-plasmic-storefront.git
+   </code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
-    <span class="k">public</span> <span class="kt">int</span> <span class="n">Value</span><span class="p">;</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">explicit</span> <span class="k">operator</span> <span class="nf">Foo</span><span class="p">(</span><span class="kt">int</span> <span class="k">value</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">Foo</span><span class="p">(</span><span class="k">value</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">Foo</span> <span class="n">foo</span> <span class="p">=</span> <span class="p">(</span><span class="n">Foo</span><span class="p">)</span><span class="m">2</span><span class="p">;</span></code></pre></figure>
+<ol>
+  <li><strong>Navigate to the Project Directory</strong>:
+Change to the project directory with:</li>
+</ol>
 
-<p><br /><br /><a name="visual-basic"></a>vb:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   <span class="nb">cd </span>medusa-plasmic-storefront
+   </code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-vb" data-lang="vb"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="code"><pre><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">Form_Load</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="s">"Hello, World!"</span>
-<span class="k">End</span> <span class="k">Sub</span>
-</pre></td></tr></tbody></table></code></pre></figure>
+<ol>
+  <li><strong>Install Dependencies</strong>:
+Install all the necessary dependencies using npm:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   npm <span class="nb">install</span>
+   </code></pre></figure>
+
+<ol>
+  <li><strong>Run the Development Server</strong>:
+Start the development server. This will host your project locally on <code class="language-plaintext highlighter-rouge">http://localhost:3000</code>, which is necessary before proceeding to the Plasmic Studio.</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   npm run dev
+   </code></pre></figure>
+
+<ol>
+  <li><strong>Open the Project in Plasmic Studio</strong>:
+Once your local server is running, you can begin working with the storefront in Plasmic Studio. Open Plasmic Studio and duplicate the project from the following link: <a href="https://studio.plasmic.app/projects/kZYdLdyCWduEwLJ51vftX9">MedusaJS - Plasmic Demo Store</a>. After duplicating the store, you can open your copy and start customizing the storefront.</li>
+</ol>
+
+<p>These steps will set up the Plasmic Storefront on your local machine and prepare you for visual editing and further development in Plasmic Studio.</p>
+
+<h2 id="project-configuration">Project Configuration</h2>
+
+<p>Once your local development environment is set up with NextJS running on <code class="language-plaintext highlighter-rouge">http://localhost:3000</code> and you have opened your project in Plasmic Studio, you’re ready to start configuring and customizing your storefront.</p>
+
+<h3 id="authentication-and-initial-setup">Authentication and Initial Setup</h3>
+
+<p>Follow the authentication instructions provided within Plasmic Studio to securely connect your local environment.</p>
+
+<h3 id="viewing-and-editing-code">Viewing and Editing Code</h3>
+
+<p>To view and modify the code:</p>
+
+<ol>
+  <li>Click on the “code” button located at the top right of your screen in Plasmic Studio. This will show you how to configure your project and integrate your changes.</li>
+</ol>
+
+<h3 id="syncing-changes">Syncing Changes</h3>
+
+<p>After making design changes in Plasmic Studio that you wish to apply to your local project, you’ll need to sync these changes. Run the following command in your terminal where your local server is running:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">plasmic <span class="nb">sync</span> <span class="nt">--projects</span> <span class="s1">'YOUR PROJECT ID'</span> <span class="nt">--yes</span></code></pre></figure>
+
+<p><strong>Finding Your Project ID:</strong> Your Project ID can be found in the URL of your Plasmic Studio, or by clicking on the <strong>“code”</strong> button where it is usually displayed.</p>
+
+<p>This command will download all the updated code to your local repository. Once the sync is complete, you can commit these changes to your GitHub repository and host your updated storefront independently from Plasmic.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>During your work with Plasmic Studio and the NextJS storefront, you might encounter a few common issues. Here are some tips to help resolve them:</p>
+
+<h3 id="project-not-loading-in-plasmic-studio">Project Not Loading in Plasmic Studio</h3>
+
+<p>If your project is not loading properly in Plasmic Studio, follow these steps:</p>
+
+<ol>
+  <li>
+    <p><strong>Verify NextJS Server</strong>: Ensure that your NextJS application is running on <code class="language-plaintext highlighter-rouge">http://localhost:3000</code>. The local server must be active as Plasmic Studio will attempt to communicate with it.</p>
+  </li>
+  <li>
+    <p><strong>Check Plasmic Host App URL</strong>: Make sure that your Plasmic host app URL is correctly set to <code class="language-plaintext highlighter-rouge">http://localhost:3000/plasmic-host</code>. Incorrect settings here can prevent Plasmic Studio from loading your project.</p>
+  </li>
+</ol>
+
+<p><strong>Enter Host App URL</strong>: You may encounter a pop-up asking you to enter your host app URL. Ensure you provide the correct URL <code class="language-plaintext highlighter-rouge">http://localhost:3000/plasmic-host</code> to facilitate the connection between Plasmic Studio and your local server.</p>
+
+<h2 id="get-familiar-with-plasmic">Get Familiar with Plasmic</h2>
+
+<p>With Plasmic, you can enable non-developers on your team to publish pages and content into your website or app.</p>
+
+<p>To learn more about Plasmic, take a look at the following resources:</p>
+
+<ul>
+  <li><a href="https://www.plasmic.app/">Plasmic Website</a></li>
+  <li><a href="https://docs.plasmic.app/learn/">Plasmic Documentation</a></li>
+  <li><a href="https://www.plasmic.app/slack">Plasmic Slack Community</a></li>
+</ul>
+
+<p>You can check out <a href="https://github.com/plasmicapp/plasmic">the Plasmic GitHub repository</a> - your feedback and contributions are welcome.</p>
 
 
     </main><footer class="footer-flex">
@@ -210,7 +260,7 @@
     <script src="/assets/loader.js"></script>
     <span class="server-status" id="frequency-wave"></span><span>&nbsp|&nbsp;</span>
     
-    <div id="clock"></div>
+    <div id="clock">101011</div>
   </div>
   <script src="/assets/clock.js"></script>
   <span><a href="https://www.linkedin.com/in/pavlotsyhanok/">LinkedIn</a></span>

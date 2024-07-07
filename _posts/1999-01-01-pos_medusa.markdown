@@ -6,170 +6,92 @@ categories: Open_Source
 vid: assets/images/pos-output-vid-comp.mp4
 ---
 
-Table of Contents:
+{% raw %}
+<div class="video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/M1N6nEop_YE?si=prw6Kr5c6jRYfZkd" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+{% endraw %}
 
-1. [Ruby](#ruby)
-2. [Python](#python)
-3. [PHP](#php)
-4. [JavaScript](#javascript)
-5. [Java](#java)
-6. [Objective-C](#objective-c)
-<br><br><b>Hacking</b><br><br>
-7. [Perl](#perl)
-8. [SQL](#sql)
-9. [C++](#c)
-10. [C#](#c-1)
-11. [Visual Basic](#visual-basic)
+# MedusaJS Point of Sale (POS) Application
 
-# Syntax highlighting
-This theme supports syntax respectively code highlighting. Below you find some examples of different programming languages.
+This Point of Sale (POS) application, built using React, is designed to support B2B flows and integrates seamlessly with the Medusa backend through API interfaces. It supports Stripe POS devices for efficient payment processing, catering to both mobile and desktop platforms as a Progressive Web App (PWA).
 
-![Test Image]({{ site.baseurl }}/assets/images/diagram.png)
+## ⚠️ Branching Information
 
+Please note that the latest production build is being built in the `pos/develop` branch.
 
-<br /><a name="ruby"></a>ruby:
-{% highlight ruby %}
-def foo
-  puts 'foo'
-end
+If you wish to run the legacy version of the non-production application, please check out the `pos/legacy` branch.
 
-def bubble_sort(list)
-  return list if list.size <= 1 # already sorted
-  swapped = true
-  while swapped do
-    swapped = false
-    0.upto(list.size-2) do |i|
-      if list[i] > list[i+1]
-        list[i], list[i+1] = list[i+1], list[i] # swap values
-        swapped = true
-      end
-    end
-  end
+Each branch contains instructions in its respective `readme.md` file.
 
-  list
-end
+### Branches
+
+- **`pos/develop`** - Current POS application development.
+- **`medusa/api`** - Necessary routes for your Medusa server.
+- **`medusa/legacy`** - Legacy version of the application designed for testing routes and Stripe terminal integration.
+- **`pos/architecture`** - Visual architecture reference and design of the application.
+
+## How to Start
+
+1. Clone the repository:
+
+{% highlight bash %}
+git clone https://github.com/pavlotsyhanok/medusa-pos-react.git
 {% endhighlight %}
 
+2. Install dependencies:
 
-<br /><br /><a name="python"></a>python:
-{% highlight python %}
-def func():
-     # function body
-     print("hello world!")
-
-     def setup(app):
-         # enable Pygments json lexer
-         try:
-             import pygments
-             if pygments.__version__ >= '1.5':
-                 # use JSON lexer included in recent versions of Pygments
-                 from pygments.lexers import JsonLexer
-             else:
-                 # use JSON lexer from pygments-json if installed
-                 from pygson.json_lexer import JSONLexer as JsonLexer
-         except ImportError:
-             pass  # not fatal if we have old (or no) Pygments and no pygments-json
-         else:
-             app.add_lexer('json', JsonLexer())
-
-         return {"parallel_read_safe": True}
-
-words = ['cat', 'window', 'defenestrate']
-for w in words:
-   print w, len(w)
+{% highlight bash %}
+npm install
 {% endhighlight %}
 
+3. Run the development server:
 
-<br /><br /><a name="php"></a>php:
-{% highlight php %}
-<?php function add($x, $y) {
-    $total = $x + $y;
-    return $total;
-}
-echo "1 + 16 = " . add(1, 16);
-?>
+{% highlight bash %}
+npm run dev
 {% endhighlight %}
 
+## Key Features
 
-<br /><br /><a name="javascript"></a>js:
-{% highlight javascript %}
-function sayHello(name) {
-  if (!name) {
-    console.log('Hello World');
-  } else {
-    console.log(`Hello ${name}`);
-  }  
-}  
+- **Customer Onboarding:** Facilitate in-store new customer registration and securely store payment methods via Stripe.
+- **B2B Optimized Flows:** Full support for unique customer group properties and tailored price lists.
+- **Pre-orders and Backorders:** Authenticate funds and securely store payment methods for future charges.
+- **Order Management:** Supports draft orders and provides shipping quotes based on the Medusa backend configuration.
+- **Sales Rep Analytics:** Track sales performance and establish goals through configurable events.
 
-function myFunc(a, b) {
-    return a * b;
-}
-document.getElementById('demo').innerHTML = myFunc(4, 3);
-{% endhighlight %}
+## Tech Stack
 
+- **Platforms:** Mobile, Tablet, Desktop (PWA)
+- **Frameworks:** React for UI, CapacitorJS for device API interactions
+- **Future Development:** Plans to incorporate React Native
 
-<br /><br /><a name="java"></a>java:
-{% highlight java %}
-class HelloWorldApp {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
-}
-{% endhighlight %}
+![POS Flows](https://github.com/pavlotsyhanok/medusa-pos-react/raw/pos/develop/public/coming-soon/pos-layout.png)
 
+## Project Status
 
-<br /><a name="objective-c"></a>objective c:
-{% highlight objective_c %}
-- (int)method:(int)i {
-    return [self square_root:i];
-}
-{% endhighlight %}
+**Current Phase:** In Development
 
+![POS Flows](https://github.com/pavlotsyhanok/medusa-pos-react/raw/pos/develop/public/coming-soon/preview.png)
 
-<br /><br /><a name="perl"></a>perl:
-{% highlight perl %}
-while (<>) {
-    chomp;
-    if (s/$//) {
-        $_ .= <>;
-        redo unless eof();
-    }
-}
-{% endhighlight %}
+### Completed Workflows
 
+- **Security:** Authentication and route protection, including admin login.
+- **Checkout Processes:** Integration with Medusa checkout flows and Stripe POS terminal.
+- **Customer Handling:** Supports both guest and B2B checkout flows with applied price lists.
+- **Promotions:** Implementation of manual discounts and coupon applications.
+- **Operational Tools:** Features like order tracking, barcode scanning, and product search.
 
-<br /><br /><a name="sql"></a>sql:
-{% highlight sql %}
-SELECT Country FROM Customers WHERE Country <> 'USA'
-{% endhighlight %}
+![POS Flows](https://github.com/pavlotsyhanok/medusa-pos-react/raw/pos/develop/public/coming-soon/pos-flows.png)
 
+## To-Do
 
-<br /><br /><a name="c"></a>c++:
-{% highlight c++ %}
-#include
-using namespace std;
-int main () {
-  cout << "Hello World!";
-  return 0;
-}
-{% endhighlight %}
+- **Performance Metrics:** Implement scoring systems for sales representatives.
+- **Payment Expansion:** Integration with Square POS functionalities.
 
+## Coming Soon
 
-<br /><br /><a name="c-1"></a>c sharp:
-{% highlight c# %}
-class Foo {
-    public int Value;
-    public static explicit operator Foo(int value) {
-        return new Foo(value);
-    }
-}
-Foo foo = (Foo)2;
-{% endhighlight %}
+This repository will soon be updated with the full project under the "Coming Soon" folder. Stay tuned for the release!
 
+## Stay Tuned
 
-<br /><br /><a name="visual-basic"></a>vb:
-{% highlight vb linenos %}
-Private Sub Form_Load()
-    MsgBox "Hello, World!"
-End Sub
-{% endhighlight %}
+Stay tuned for further updates as we progress towards general availability, aiming to enhance the retail experience with innovative technology solutions.
