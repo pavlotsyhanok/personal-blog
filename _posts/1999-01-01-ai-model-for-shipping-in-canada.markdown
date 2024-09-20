@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Linear - Project Management with AI"
+title:  "Commercial and Residential Address Classification System in Canada"
 date:   2023-09-21 00:00:00 +0100
 categories: AI/ML
-vid: assets/images/Open-Buildings-Preview.jpg
+vid: assets/images/OB_Temporal_hero.mp4
 ---
 
-![shippping-in-canada](assets/images/Open-Buildings-Preview.jpg)
+![shippping-in-canada](https://storage.googleapis.com/gweb-research2023-media/images/OB_Temporal_Img3.width-800.png)
 
 # Commercial and Residential Address Classification System in Canada
 
@@ -24,7 +24,7 @@ In the United States, the Residential Delivery Index (RDI) developed by USPS eff
 
 ## Proposed Solution
 
-We propose the development of a machine learning (ML) algorithm that utilizes geolocation data, satellite imagery, and urban planning records to create a Canadian Residential and Commercial Address Index (CRCAI). This solution will categorically segment addresses into the following:
+We propose the development of a machine learning (ML) algorithm that utilizes geolocation data, satellite imagery, and urban planning records to create a Canadian Residential and Commercial Address Index (CRCAI). A key component of this solution will be leveraging Google's Open Buildings 2.5D Temporal dataset, which provides detailed geospatial data that can enhance the accuracy of address classification. This solution will categorically segment addresses into the following:
 
 - **Residential (Suburbs):** Single-family homes, low-rise apartments, and townhomes.
 - **Residential (High-Rise):** High-rise apartments and densely populated areas.
@@ -41,11 +41,11 @@ We propose the development of a machine learning (ML) algorithm that utilizes ge
 
 ## Resources Required
 
-- **Data Acquisition:** Access to updated geolocation data, satellite imagery, and urban planning records.
+- **Data Acquisition:** Access to updated geolocation data, satellite imagery, urban planning records, and Google's Open Buildings 2.5D Temporal dataset.
 - **Technology Development:** Investment in machine learning technology and software development for system integration.
 - **Testing and Deployment:** Resources for pilot testing in selected regions before nationwide deployment.
 - **Maintenance and Updates:** Ongoing support to update the database and improve the algorithm based on new data and user feedback.
 
 ## Further Development
 
-The implementation of a comprehensive address classification system similar to the RDI in the United States could revolutionize the Canadian freight and logistics industry by enhancing operational efficiency and customer satisfaction.
+The implementation of a comprehensive address classification system similar to the RDI in the United States, enhanced by Google's Open Buildings 2.5D Temporal dataset, could revolutionize the Canadian freight and logistics industry by enhancing operational efficiency and customer satisfaction.
