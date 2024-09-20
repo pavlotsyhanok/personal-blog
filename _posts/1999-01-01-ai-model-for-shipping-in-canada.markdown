@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Commercial and Residential Address Classification System in Canada"
+title:  "Delivery Zone Classification in Canada"
 date:   2023-09-21 00:00:00 +0100
 categories: AI/ML
 vid: assets/images/OB_Temporal_hero.mp4
@@ -8,7 +8,7 @@ vid: assets/images/OB_Temporal_hero.mp4
 
 ![shippping-in-canada](https://storage.googleapis.com/gweb-research2023-media/images/OB_Temporal_Img3.width-800.png)
 
-# Commercial and Residential Address Classification System in Canada
+# Commercial and Residential Area Classification System in Canada
 
 ## Overview
 
